@@ -51,7 +51,7 @@ In wavelet based image dehazing the selection of wavelets is an essential task w
 
 
 ### Experiment2
-In this experiment, we aim to enhance image dehazing by boosting feature extraction using multiple levels wavelets filterbanks. Therefore, as it can be seen in Fig.3 we have re- placed the first layer’s Haar wavelet filterbank by a two level Haar wavelet filterbank. By applying a two level wavelet feature bank, we would split the input image to narrower frequency sub-bands in the low frequencies where most of the crucial image and haze features are located.
+In this experiment, we aim to enhance image dehazing by boosting feature extraction using multiple levels wavelets filterbanks. Therefore, we have replaced the first layer’s Haar wavelet filterbank by a two level Haar wavelet filterbank. By applying a two level wavelet feature bank, we would split the input image to narrower frequency sub-bands in the low frequencies where most of the crucial image and haze features are located.
 
 
 ## Code organization 
