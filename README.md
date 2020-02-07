@@ -46,7 +46,7 @@ $ CUDA_VISIBLE_DEVICES=0 python train.py --epochs 100 \
                 --net_name /dehaze_chromatic_
 ```
 ### Experiment1
-In wavelet based image dehazing the selection of wavelets is an essential task which determines the dehazed image quality. There are several choices of wavelets with different properties. Therefore, in the first experiment, we aim to investigate the different wavelet types performance in image dehazing and features extraction when employed in the model described in the paper. We use different bases of wavelet filters. We have used Haar, Daubechies, Symlets and Biorthogonal wavelets. we are interested in finding whether certain wavelets outperform others and in- vestigate their properties and advantages in image dehazing U-net. Some of the properties that we think might affect the performance are: Orthogonality, symmetry, number of vanishing moments, power perseverance and filter size.
+In wavelet based image dehazing the selection of wavelets is an essential task which determines the dehazed image quality. There are several choices of wavelets with different properties. Therefore, in the first experiment, we aim to investigate the different wavelet types performance in image dehazing and features extraction when employed in the model described in the paper. We use different bases of wavelet filters. We have used Haar, Daubechies, Symlets and Biorthogonal wavelets. we are interested in finding whether certain wavelets outperform others and investigate their properties and advantages in image dehazing U-net. Some of the properties that we think might affect the performance are: Orthogonality, symmetry, number of vanishing moments, power perseverance and filter size.
 
 
 
@@ -58,7 +58,7 @@ In this experiment, we aim to enhance image dehazing by boosting feature extract
 
 ### experiment1
 
- - experiment1: 
+ - experiment1: exploring the effect of different types of wavelets in the U-net
  - experiment1/main.py: 
  - experiment1/train.py: Module for training and evaluation
  - experiment1/base_model.py: Module for BaseModel, which controls WordEmbedding, QuestionEmbedding, Attention, FCnet, and classifier
