@@ -1,37 +1,32 @@
-# Wavelet U-net Dehazing
-WAVELET U-NET AND THE CHROMATIC ADAPTATION TRANSFORM FOR SINGLE IMAGE DEHAZING -
+# SAMS_VQA
 
-This repository shows implementation of [Wavelet U-net for image dehazing](https://ieeexplore.ieee.org/document/8803391). This work establishes the new network combining wavelet transrom for single image dehazing. We use [RESIDE](https://sites.google.com/view/reside-dehaze-datasets/reside-v0)dataset for evaluation, and it outperforms the state-of-art algorithms.
+## Description 
 
-<p align="center"><img width="80%" src="figures/structure.png" /></p>
+This is project "Image Dehazing Using U-net Architecture with Wavelet Feature Extraction" developed by Sina Shahsavari, Ayman jabaren.
 
-## Paper
-[WAVELET U-NET AND THE CHROMATIC ADAPTATION TRANSFORM FOR SINGLE IMAGE DEHAZING](https://ieeexplore.ieee.org/document/8803391) <br/>
-[Hao-Hsiang Yang](https://www.linkedin.com/in/%E7%9A%93%E7%BF%94-%E6%A5%8A-155440164/)<sup> 1,2</sup>, [Yanwei Fu](https://yanweifu.github.io/)<sup> 2</sup> <br/>
-<sup>1 </sup>Graduate Institute of Electrical Engineering, National Taiwan University, Taipei, Taiwan, <sup>2 </sup>School of Data Science, Fudan University, Shanghai, China<br/>
- IEEE International Conference on Image Processing ([ICIP](http://2019.ieeeicip.org/)), 2019 
-<br/>
+## Abstract 
 
-## Dependencies
+Image dehazing is an ill-posed problem challenging many computer vision applications. It is an undesirable physical phenomena that occurs while capturing real pictures. Many methods and algorithms were developed for that end. Nonetheless, no generic high-quality solution has been proposed yet. Hence, we are proposing an end-to-end architecture that tackles the problem and outperforms state-of-the-art approaches. Deep network has shown promising results when it comes to image dehazing. We investigated and harnessed wavelet filterbank properties for feature extraction in U-net neural network. By doing so, we have combined U-net learning properties with image specific efficient features extraction. While enhancing the model performance, we explored the effect of different types of wavelet filterbanks as well as different number of wavelet levels on the quality of image effecting.
+
+Index Terms— Wavelet filterbank, feature extraction, multi-level wavelet, U-net, image dehazing,
+
+## For more details please read our final paper 
+- https://github.com/Sinashahsavari/Image-Dehazing-Using-U-net-/blob/master/final%20paper.pdf
+
+## Requirements and Usage
+### Dependencies
 * [Python 3.6+](https://www.continuum.io/downloads)
 * [PyTorch 0.4.0+](http://pytorch.org/)
 * [PyWt](https://pypi.org/project/PyWt/)
 
 <br/>
 
-## Usage
-### 1. Cloning the repository
-```bash
-$ git clone https://github.com/dectrfov/Wavelet-U-net-Dehazing.git
-$ cd Wavelet-U-net-Dehazing
-```
-
-### 2. Downloading the [RESIDE](http://t.cn/RQXyZFI ) dataset
+### Downloading the [RESIDE](http://t.cn/RQXyZFI ) dataset
 We only use images in clear and haze folders
 All claar images are divided as training images (train_clear), testing images (train_hazy).
-The hazy images are placed to corresponding folders (val_clear and val_hazy).
+The hazy images should be placed to corresponding folders (val_clear and val_hazy).
 
-### 3. Training
+###  Training
 ```bash
 $ CUDA_VISIBLE_DEVICES=0 python train.py --epochs 100 \
                 --lr 1e-4 \
@@ -42,42 +37,50 @@ $ CUDA_VISIBLE_DEVICES=0 python train.py --epochs 100 \
                 --val_ori_data_path /val_clear/ \
                 --val_haze_data_path /val_hazy/ \
                 --num_workers 4 \
-                --batch_size 40 \
-                --val_batch_size 4 \
+                --batch_size 10 \
+                --val_batch_size 2 \
                 --print_gap 500 \
                 --model_dir /model/ \
                 --log_dir /model/ \
                 --sample_output_folder /samples/ \
                 --net_name /dehaze_chromatic_
 ```
-### 4. Testing
+### Experiment1
 
-To test dehazing on RESIDE:
 
-```bash
-$ python demo.py  --sample_output_folder samples/ \
-                --use_gpu true \
-                --gpu 0 \
-                --model_dir model/ \
-                --ckpt dehaze_chromatic_100.pkl
-```
-<br/>
 
-## Using pre-trained model for evaluation
 
-### 1. Download [model](https://drive.google.com/open?id=1t_6NvDa5O2y6_QIjs1C4ox2wA7iWrZPo)
-Download from googledrive and put it in the model folder
+### Experiment2
 
-### 2. Place haze images
-Place hazy images in the samples folder
 
-### 3. Run following command
 
-```bash
-$ python demo.py  --sample_output_folder samples/ \
-                --use_gpu true \
-                --gpu 0 \
-                --model_dir model/ \
-                --ckpt dehaze_chromatic_100.pkl
-```
-<p align="center"><img width="90%" src="result/1273_1_0.16.jpg" /></p>
+## Code organization 
+
+### experiment1
+
+ - experiment1: 
+ - experiment1/main.py: 
+ - experiment1/train.py: Module for training and evaluation
+ - experiment1/base_model.py: Module for BaseModel, which controls WordEmbedding, QuestionEmbedding, Attention, FCnet, and classifier
+  - experiment1/data: Data files
+ - experiment1/data/train_ids.pkl: Indeces of training data
+ - experiment1/data/val_ids.pkl: Indeces of validation data
+ - experiment1/README.md: Information for experiment1
+
+### experiment2
+
+ - experiment2: 
+ - experiment2/main.py: 
+ - experiment2/train.py: Module for training and validation
+ 
+ - experiment2/dataset.py: Module for data loading
+ - experiment2/config.yml: Configuration file
+
+
+
+## Refrences
+This work is mainly based on this paper:
+[Wavelet U-net for image dehazing](https://ieeexplore.ieee.org/document/8803391)
+
+
+
