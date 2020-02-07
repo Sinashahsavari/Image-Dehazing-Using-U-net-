@@ -1,5 +1,5 @@
 # Wavelet U-net Dehazing
-WAVELET U-NET AND THE CHROMATIC ADAPTATION TRANSFORM FOR SINGLE IMAGE DEHAZING - ICIP 2019
+WAVELET U-NET AND THE CHROMATIC ADAPTATION TRANSFORM FOR SINGLE IMAGE DEHAZING -
 
 This repository shows implementation of [Wavelet U-net for image dehazing](https://ieeexplore.ieee.org/document/8803391). This work establishes the new network combining wavelet transrom for single image dehazing. We use [RESIDE](https://sites.google.com/view/reside-dehaze-datasets/reside-v0)dataset for evaluation, and it outperforms the state-of-art algorithms.
 
