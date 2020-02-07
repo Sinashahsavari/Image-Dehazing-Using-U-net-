@@ -59,7 +59,7 @@ In this experiment, we aim to enhance image dehazing by boosting feature extract
 ### experiment1
 
  - experiment1: exploring the effect of different types of wavelets in the U-net
- - experiment1/main.py: 
+ - experiment1/.py: 
  - experiment1/train.py: Module for training and evaluation
  - experiment1/base_model.py: Module for BaseModel, which controls WordEmbedding, QuestionEmbedding, Attention, FCnet, and classifier
   - experiment1/data: Data files
