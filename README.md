@@ -56,25 +56,20 @@ In this experiment, we aim to enhance image dehazing by boosting feature extract
 
 ## Code organization 
 
-### experiment1
+### experiment1 and experiment2
 
  - experiment1: exploring the effect of different types of wavelets in the U-net
- - experiment1/.py: 
+ - experiment2: exploring the effect of different nuumber of wavelets levels in the U-net
+ - experiment1/config.yml: Configuration file
+ - experiment1/PSNR.yml: Configuration file
+ - experiment1/wavelet.yml: contains the wavelet feature extraction functions as well as inverse wavelet functions for reconstruction  
  - experiment1/train.py: Module for training and evaluation
- - experiment1/base_model.py: Module for BaseModel, which controls WordEmbedding, QuestionEmbedding, Attention, FCnet, and classifier
-  - experiment1/data: Data files
- - experiment1/data/train_ids.pkl: Indeces of training data
- - experiment1/data/val_ids.pkl: Indeces of validation data
+ - experiment1/model.py: Module for Model, which implements U-net network with wavelet feature extraction layers
+ - experiment1/data: Data files
+ - experiment1/Utils: some used functions  
  - experiment1/README.md: Information for experiment1
 
-### experiment2
 
- - experiment2: 
- - experiment2/main.py: 
- - experiment2/train.py: Module for training and validation
- 
- - experiment2/dataset.py: Module for data loading
- - experiment2/config.yml: Configuration file
 
 
 
