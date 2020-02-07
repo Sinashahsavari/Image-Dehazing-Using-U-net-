@@ -15,13 +15,9 @@ class HazeDataset(torch.utils.data.Dataset):
         #print(glob.glob(os.path.join(self.haze_root, '*.jpg')))
         self.image_name_list = glob.glob(os.path.join(self.haze_root, '*.bmp'))
         #self.image_name_list = glob.glob(os.path.join('train_hazy/', '*.bmp'))
-        self.image_name_list+=(glob.glob(os.path.join(self.haze_root, '000*_0.8_*.jpg')))
-        self.image_name_list+=(glob.glob(os.path.join(self.haze_root, '000*_1_0.1.jpg')))
-        self.image_name_list+=(glob.glob(os.path.join(self.haze_root, '000*_1_0.2.jpg')))
-        
-        self.image_name_list+=(glob.glob(os.path.join(self.haze_root, '100*_0.8_*.jpg')))
-        self.image_name_list+=(glob.glob(os.path.join(self.haze_root, '100*_1_0.1.jpg')))
-        self.image_name_list+=(glob.glob(os.path.join(self.haze_root, '100*_1_0.2.jpg')))
+        self.image_name_list+=(glob.glob(os.path.join(self.haze_root, '*_0.8_*.jpg')))
+        self.image_name_list+=(glob.glob(os.path.join(self.haze_root, '*_1_0.1*.jpg')))
+        self.image_name_list+=(glob.glob(os.path.join(self.haze_root, '*_1_0.2*.jpg')))
         #self.image_name_list+=(glob.glob(os.path.join('train_hazy/', '*.jpg')))
         self.matching_dict = {}
         self.file_list = []
