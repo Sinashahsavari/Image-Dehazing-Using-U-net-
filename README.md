@@ -1,4 +1,4 @@
-# SAMS_VQA
+# Image Dehazing Using U-net Architecture with Wavelet Feature Extraction
 
 ## Description 
 
